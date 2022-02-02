@@ -1,6 +1,6 @@
 FROM python:3.7-alpine
 
-MAINTAINER Pradeep Kumar P
+LABEL key="Pradeep Kumar P"
 
 ENV PYTHONUNBUFFERED 1
 
