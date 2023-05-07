@@ -27,10 +27,24 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Database connection definition
+DATABASES = {
+    'default': {
+        'ENGINE': 'django_cassandra_engine',
+        'NAME': 'main_tt',
+        'TEST_NAME': 'test_key',
+        'HOST': '127.0.0.1',
+        'OPTIONS': {
+            'replication': {
+                'strategy_class': 'SimpleStrategy',
+                'replication_factor': 2
+            },
+        }
+    }}
 
 # Application definition
-
 INSTALLED_APPS = [
+    'django_cassandra_engine',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
