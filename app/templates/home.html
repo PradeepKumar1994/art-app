@@ -1,8 +1,8 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
   <head>
-    <title>My Basic HTML/CSS Page</title>
-    <style>
+      <style>
       /* Global styles */
       body {
         background-color: #f2f2f2;
@@ -22,6 +22,10 @@
         text-align: center;
       }
 
+    header img {
+      height: 5%;
+      width: 100%;
+    }
       /* Navigation styles */
       nav {
         background-color: #333;
@@ -66,21 +70,21 @@
         width: 100%;
       }
     </style>
+      <title>My Basic HTML/CSS Page</title>
   </head>
   <body>
     <header>
-      <img src="/css/image.jpeg">
+      <img style="background-image: {% static 'image.jpeg' %}; background-position: center";>
       <h1>Welcome to My Basic HTML/CSS Page</h1>
     </header>
     <nav>
-      <a href="#">Home</a>
+      <a href="/">Home</a>
       <a href="#">Contact Us</a>
       <a href="#">Posts</a>
       <a href="#">E-commerce</a>
     </nav>
     <main>
-      <p>This is some content for my basic page.</p>
-      <p>Here is another paragraph of text.</p>
+      <p>We'll be displaying our posts here.</p>
       <ul>
         <li>Item 1</li>
         <li>Item 2</li>
@@ -88,7 +92,7 @@
       </ul>
     </main>
     <footer>
-      <p>&copy; 2023 My Basic HTML/CSS Page. All rights reserved.</p>
+      <p>&copy; 2023 Sheshu-Arts. All rights reserved.</p>
     </footer>
   </body>
 </html>
