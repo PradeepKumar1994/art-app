@@ -10,6 +10,8 @@ django = "^4.2"
 djangorestframework = ">=3.9.0,<3.10.0"
 react = "^4.3.0"
 django-cors-headers = "^3.14.0"
+cassandra-driver = "^3.26.0"
+django-cassandra-engine = "^1.8.0"
 
 [tool.poetry.dev-dependencies]
 

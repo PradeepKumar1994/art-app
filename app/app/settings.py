@@ -27,10 +27,24 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# Database connection definition
+DATABASES = {
+    'default': {
+        'ENGINE': 'django_cassandra_engine',
+        'NAME': 'main_tt',
+        'TEST_NAME': 'test_key',
+        'HOST': '127.0.0.1',
+        'OPTIONS': {
+            'replication': {
+                'strategy_class': 'SimpleStrategy',
+                'replication_factor': 2
+            },
+        }
+    }}
 
 # Application definition
-
 INSTALLED_APPS = [
+    'django_cassandra_engine',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -117,4 +131,4 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = os.path.join(BASE_DIR, 'templates/static/')
